@@ -2,96 +2,444 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI AGENT — Free AI Coding Agent</title>
-<meta name="description" content="AI AGENT is a free AI-powered coding companion for building, debugging, and shipping projects.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070812">
+<meta name="description" content="AI AGENT is a free AI-powered desktop companion for coding, web browsing, desktop automation, voice interaction, and personalized assistance.">
+<title>AI AGENT — Your Coding Workspace</title>
 <style>
-:root{--bg:#03040b;--panel:rgba(12,15,28,.72);--border:rgba(255,255,255,.09);--text:#f5f7ff;--muted:#9299b4}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;color:var(--text);background:radial-gradient(circle at 50% -10%,rgba(91,83,255,.22),transparent 35%),radial-gradient(circle at 10% 35%,rgba(53,153,255,.08),transparent 28%),radial-gradient(circle at 90% 55%,rgba(164,76,255,.08),transparent 30%),var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle,rgba(255,255,255,.85) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(151,191,255,.7) 0 1px,transparent 1.5px);background-size:170px 170px,260px 260px;background-position:10px 20px,80px 100px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}a{color:inherit;text-decoration:none}.nav{width:min(1180px,calc(100% - 40px));height:72px;margin:16px auto 0;padding:0 18px 0 22px;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:20px;background:rgba(6,8,18,.65);backdrop-filter:blur(22px);position:relative;z-index:10}.logo{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:800;letter-spacing:.08em}.logo-orb{width:31px;height:31px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#8eb4ff 18%,#655bff 48%,#171333 72%);box-shadow:0 0 25px rgba(106,102,255,.75);position:relative}.logo-orb:after{content:"";position:absolute;width:42px;height:12px;left:-6px;top:9px;border:1px solid rgba(150,164,255,.65);border-radius:50%;transform:rotate(-20deg)}.nav-links{display:flex;gap:30px;color:#aeb5cc;font-size:13px}.nav-links a:hover{color:#fff}.nav-button{padding:10px 17px;border-radius:11px;background:#f5f7ff;color:#080914;font-size:13px;font-weight:750;transition:.2s}.nav-button:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,255,255,.13)}.hero{min-height:690px;width:min(1120px,calc(100% - 40px));margin:auto;padding:112px 0 90px;text-align:center;position:relative}.planet{position:absolute;width:480px;height:480px;left:50%;top:160px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 32% 27%,rgba(255,255,255,.8),transparent 2%),radial-gradient(circle at 36% 34%,#6675ff,#29214d 38%,#090914 72%);opacity:.16;box-shadow:0 0 100px rgba(89,98,255,.22);pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(128,150,255,.2);background:rgba(79,88,155,.1);color:#aebdff;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;letter-spacing:.05em;position:relative}.live-dot{width:6px;height:6px;border-radius:50%;background:#6fffc5;box-shadow:0 0 12px #6fffc5}h1{position:relative;margin-top:24px;font-size:clamp(56px,9vw,104px);line-height:.92;letter-spacing:-.065em;font-weight:850;background:linear-gradient(110deg,#fff 25%,#a8b7ff 58%,#b48cff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-sub{position:relative;max-width:650px;margin:25px auto 0;color:#9da5bd;font-size:17px;line-height:1.7}.hero-actions{position:relative;display:flex;justify-content:center;gap:12px;margin-top:31px}.primary{display:inline-block;border:0;border-radius:13px;padding:13px 20px;font-size:13px;font-weight:750;background:linear-gradient(135deg,#fff,#cbd5ff);color:#080914;box-shadow:0 0 35px rgba(125,142,255,.18);transition:.2s;cursor:pointer}.primary:hover{transform:translateY(-3px)}.preview{position:relative;width:min(930px,100%);height:330px;margin:82px auto 0;border:1px solid rgba(153,163,255,.16);border-radius:19px;overflow:hidden;background:linear-gradient(135deg,rgba(8,10,20,.92),rgba(17,18,39,.7));box-shadow:0 35px 100px rgba(0,0,0,.5),0 0 90px rgba(72,79,255,.09)}.preview:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(107,118,255,.08),transparent 55%)}.preview-label{position:absolute;top:24px;left:24px;color:#717992;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.image-space{position:absolute;inset:52px 24px 24px;border:1px dashed rgba(148,161,255,.18);border-radius:14px;display:grid;place-items:center;color:#59627d;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.section{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:105px 0}.section-heading{max-width:650px;margin-bottom:38px}.section-heading span{color:#879cff;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.section-heading h2{margin-top:12px;font-size:clamp(30px,5vw,50px);letter-spacing:-.045em}.section-heading p{color:var(--muted);margin-top:14px;line-height:1.7;font-size:14px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:25px;min-height:190px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(145deg,rgba(20,23,41,.72),rgba(7,9,18,.65));transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(143,156,255,.23);box-shadow:0 20px 50px rgba(0,0,0,.22)}.icon{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:rgba(116,132,255,.1);border:1px solid rgba(126,143,255,.15);color:#aeb9ff;font-size:16px}.card h3{margin-top:19px;font-size:15px}.card p{margin-top:9px;color:#80889f;font-size:12px;line-height:1.65}.cta{width:min(1100px,calc(100% - 40px));margin:25px auto 100px;padding:70px 30px;text-align:center;border:1px solid rgba(137,151,255,.15);border-radius:25px;background:radial-gradient(circle at 50% 0%,rgba(98,106,255,.17),transparent 50%),rgba(13,16,30,.8);position:relative;overflow:hidden}.cta h2{font-size:clamp(32px,5vw,54px);letter-spacing:-.05em}.cta p{color:#8d95ac;margin:14px auto 25px;max-width:530px;line-height:1.6;font-size:14px}footer{border-top:1px solid var(--border);padding:28px 20px;color:#626a81;text-align:center;font-size:11px}.thanks{display:none;min-height:100vh;width:min(850px,calc(100% - 40px));margin:auto;align-items:center;justify-content:center;text-align:center;padding:80px 0}.thanks.active{display:flex}.site.hidden{display:none}.thanks-box{padding:70px 30px;width:100%;border:1px solid rgba(137,151,255,.15);border-radius:28px;background:radial-gradient(circle at 50% 0%,rgba(98,106,255,.18),transparent 52%),rgba(13,16,30,.82);box-shadow:0 30px 100px rgba(0,0,0,.45)}.check{width:70px;height:70px;margin:0 auto 25px;border-radius:50%;display:grid;place-items:center;font-size:28px;color:#dce2ff;background:rgba(111,255,197,.08);border:1px solid rgba(111,255,197,.25);box-shadow:0 0 40px rgba(111,255,197,.1)}.thanks h1{font-size:clamp(42px,7vw,72px);margin:0}.thanks p{color:#9299b4;line-height:1.7;margin:18px auto 28px;max-width:560px}.reveal{opacity:0;transform:translateY(20px);animation:reveal .8s ease forwards}@keyframes reveal{to{opacity:1;transform:translateY(0)}}@media(max-width:760px){.nav-links{display:none}.nav{width:calc(100% - 24px);margin-top:12px}.hero{padding-top:85px}.hero-sub{font-size:15px}.features{grid-template-columns:1fr}.preview{margin-top:60px;height:260px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+:root {
+  color-scheme: dark;
+  --bg: #070812;
+  --panel: rgba(17, 20, 39, .72);
+  --panel-strong: rgba(18, 21, 42, .94);
+  --border: rgba(164, 174, 255, .15);
+  --text: #f6f7ff;
+  --muted: #a0a7c0;
+  --subtle: #747c98;
+  --blue: #9eafff;
+  --purple: #b99bff;
+  --mint: #78f5c4;
+  --radius: 22px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% -12%, rgba(91, 83, 255, .25), transparent 43%),
+    radial-gradient(ellipse at 0% 40%, rgba(43, 125, 255, .09), transparent 30%),
+    radial-gradient(ellipse at 100% 55%, rgba(159, 76, 255, .08), transparent 30%),
+    var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .38;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(153,177,255,.7) 0 1px, transparent 1.4px);
+  background-size: 180px 180px, 270px 270px;
+  background-position: 15px 20px, 80px 105px;
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+.nav {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  width: min(1200px, calc(100% - 32px));
+  min-height: 70px;
+  margin: 12px auto 0;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(7, 9, 21, .78);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 12px 50px rgba(0,0,0,.16);
+}
+.logo { display: inline-flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 850; letter-spacing: .12em; white-space: nowrap; }
+.logo-orb {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #fff 0 5%, #a8c6ff 17%, #655bff 48%, #171333 74%);
+  box-shadow: 0 0 24px rgba(106,102,255,.55);
+}
+.logo-orb::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 12px;
+  left: -6px;
+  top: 9px;
+  border: 1px solid rgba(163,177,255,.7);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+.nav-links { display: flex; align-items: center; gap: 30px; color: #aeb5cc; font-size: 13px; }
+.nav-links a { transition: color .2s ease; }
+.nav-links a:hover { color: white; }
+.button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button-primary {
+  color: #090a17;
+  background: linear-gradient(135deg, #fff, #d0d8ff 65%, #c4b9ff);
+  box-shadow: 0 8px 32px rgba(126,139,255,.19);
+}
+.button-primary:hover { box-shadow: 0 12px 38px rgba(126,139,255,.3); }
+.button-secondary { color: #e6e9ff; border-color: var(--border); background: rgba(255,255,255,.035); }
+.button-secondary:hover { border-color: rgba(164,174,255,.35); background: rgba(255,255,255,.07); }
+.hero { position: relative; padding: 112px 0 80px; text-align: center; }
+.eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  color: #bdc7ff;
+  background: rgba(89, 101, 190, .12);
+  border: 1px solid rgba(145,160,255,.22);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 13px rgba(120,245,196,.85); }
+h1 {
+  max-width: 900px;
+  margin: 27px auto 0;
+  font-size: clamp(54px, 8.5vw, 100px);
+  line-height: .98;
+  letter-spacing: -.075em;
+  font-weight: 850;
+  background: linear-gradient(110deg, #fff 20%, #b7c4ff 57%, #c9a7ff 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-copy { max-width: 650px; margin: 25px auto 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.hero-actions { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.credit { margin-top: 17px; color: var(--subtle); font-size: 12px; }
+.credit strong { color: #c2c8e5; font-weight: 650; }
+.preview {
+  position: relative;
+  width: min(960px, 100%);
+  margin: 76px auto 0;
+  padding: 13px;
+  border: 1px solid rgba(153,163,255,.19);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(21,24,47,.92), rgba(8,10,22,.88));
+  box-shadow: 0 35px 100px rgba(0,0,0,.43), 0 0 90px rgba(72,79,255,.09);
+}
+.preview-topbar { display: flex; align-items: center; gap: 7px; padding: 3px 7px 13px; }
+.window-dot { width: 8px; height: 8px; border-radius: 50%; background: #555b77; }
+.window-title { margin-left: 8px; color: #777f9d; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.preview-frame {
+  min-height: 250px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(148,161,255,.12);
+  border-radius: 13px;
+  background: radial-gradient(ellipse at 50% 45%, rgba(101,112,255,.1), transparent 60%), #080a16;
+}
+.preview-frame img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; }
+.preview-fallback { padding: 50px 20px; color: #6f7897; font-size: 12px; text-align: center; }
+.section { padding: 96px 0; }
+.section-heading { max-width: 670px; margin-bottom: 34px; }
+.kicker { color: #a5b2ff; font-size: 11px; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
+h2 { margin: 12px 0 0; font-size: clamp(31px, 4.5vw, 48px); line-height: 1.08; letter-spacing: -.055em; }
+.section-heading p { margin: 15px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+.card {
+  min-height: 205px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(20,23,43,.78), rgba(8,10,21,.67));
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(143,156,255,.32); box-shadow: 0 22px 55px rgba(0,0,0,.22); }
+.card-icon { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid rgba(126,143,255,.2); border-radius: 12px; background: rgba(116,132,255,.1); color: #bdc7ff; font-size: 17px; }
+.card h3 { margin: 19px 0 0; font-size: 15px; letter-spacing: -.01em; }
+.card p { margin: 9px 0 0; color: #929ab4; font-size: 13px; line-height: 1.75; }
+.story {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(20,23,43,.72), rgba(8,10,21,.65));
+}
+.story h2 { margin-top: 12px; }
+.story-copy { color: var(--muted); font-size: 14px; line-height: 1.9; }
+.story-copy p + p { margin-top: 14px; }
+.note { color: var(--subtle); font-size: 12px; }
+.cta {
+  position: relative;
+  overflow: hidden;
+  margin: 15px auto 95px;
+  padding: 70px 26px;
+  text-align: center;
+  border: 1px solid rgba(137,151,255,.2);
+  border-radius: 26px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(98,106,255,.2), transparent 55%), rgba(13,16,30,.82);
+  box-shadow: 0 25px 80px rgba(0,0,0,.16);
+}
+.cta h2 { margin: 0; font-size: clamp(32px, 5vw, 52px); }
+.cta p { max-width: 550px; margin: 15px auto 25px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.cta .fine-print { margin-top: 15px; color: var(--subtle); font-size: 11px; }
+footer { padding: 27px 20px; border-top: 1px solid var(--border); color: #727a95; text-align: center; font-size: 11px; line-height: 1.8; }
+.thanks { display: none; min-height: 80vh; align-items: center; justify-content: center; padding: 70px 0; }
+.thanks.active { display: flex; }
+.site.hidden { display: none; }
+.thanks-box { width: min(760px, 100%); padding: 68px 30px; text-align: center; border: 1px solid var(--border); border-radius: 27px; background: radial-gradient(ellipse at 50% 0%, rgba(98,106,255,.18), transparent 56%), var(--panel-strong); }
+.check { width: 66px; height: 66px; margin: 0 auto 25px; display: grid; place-items: center; border: 1px solid rgba(120,245,196,.28); border-radius: 50%; background: rgba(120,245,196,.08); color: var(--mint); font-size: 27px; box-shadow: 0 0 36px rgba(120,245,196,.08); }
+.thanks h1 { margin: 0; font-size: clamp(39px, 6vw, 65px); }
+.thanks p { max-width: 520px; margin: 20px auto 26px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.reveal { opacity: 0; transform: translateY(15px); animation: reveal .7s ease forwards; }
+@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) {
+  .nav { min-height: 62px; padding: 0 15px; }
+  .nav-links { display: none; }
+  .nav .button { min-height: 39px; padding-inline: 13px; }
+  .hero { padding-top: 83px; }
+  .hero-copy { font-size: 15px; }
+  .preview { margin-top: 53px; padding: 9px; }
+  .preview-frame { min-height: 180px; }
+  .section { padding: 70px 0; }
+  .features { grid-template-columns: 1fr; }
+  .card { min-height: 0; }
+  .story { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
+  .cta { margin-bottom: 65px; padding: 55px 22px; }
+}
+@media (max-width: 420px) {
+  .container { width: calc(100% - 28px); }
+  .nav { width: calc(100% - 20px); }
+  .logo { font-size: 12px; }
+  .logo-orb { width: 27px; height: 27px; }
+  h1 { font-size: clamp(48px, 14vw, 60px); }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
 <div id="site" class="site">
-<nav class="nav"><a href="#" class="logo"><span class="logo-orb"></span>AI AGENT</a><div class="nav-links"><a href="#features">Features</a><a href="#preview">Preview</a><a href="#about">About</a></div><a class="nav-button" href="#start">Launch Agent</a></nav>
-<main>
-<section class="hero"><div class="planet"></div><div class="eyebrow reveal"><span class="live-dot"></span>FREE AI CODING AGENT</div><h1 class="reveal" style="animation-delay:.12s">Build beyond<br>the ordinary.</h1><p class="hero-sub reveal" style="animation-delay:.2s">AI AGENT is your free AI-powered coding companion. Ask it to build, understand, debug, and improve your projects while you stay in control.</p><h6 class="hero-sub reveal" style="animation-delay:.2s">Built by the creators behind REX AI (Rex Utils, SCM)</h6><div class="hero-actions reveal" style="animation-delay:.28s"><a class="primary" href="#start">Start Building →</a></div><div class="preview reveal" id="preview" style="animation-delay:.36s"><img src=Example3.png></div></section>
-<section class="section" id="features"><div class="section-heading"><span>Built for skids </span><h2>One agent, Fifty Skids</h2><p>Free forever, no matter how many people, this is free for everyone.</p></div><div class="features"><article class="card"><div class="icon">⌘</div><h3>Code with projects</h3><p>All you need to do is give it a folder path and ask it what to do. It will handle the rest.</p></article><article class="card"><div class="icon">✦</div><h3>Build faster</h3><p>Not really but you dont have to do the labor skids :)</p></article><article class="card"><div class="icon">◌</div><h3>No Limits, No Restrictions</h3><p>AI AGENT will always stay free, forever there is no limit to what it can do, its programmed to do what you say, no matter what it is.</p></article></div></section>
-<section class="section" id="about" style="padding-top:20px"><div class="section-heading"><span>The idea</span><h2>How it all started</h2><p>So one day i was on my pc lowk having so much errors that it looked like i failed a video game😭 So uh then i asked codex, "Yo why isnt this working" and then well BOOM, "Please upgrade to a higher plan to keep chatting with codex" So like i was so mad at that and then i realised that i own my own ai so basically here we are i just boom boom bang and made this.<h6>(All rights belong to their respective owners, AI AGENT is not affiliated with codex)</h6></div></section>
-<section class="cta" id="start"><h2>Ready to launch?</h2><p>Download AI AGENT and start building your next idea. By downloading this software you agree to the License on the github.</p><button class="primary" onclick="downloadAgent()">Launch AI AGENT →</button></section>
-<footer>© 2026 AI AGENT · Raiden Avery  · Built for people who build.</footer>
-</main>
-</div>
-<div id="thanks" class="thanks"><div class="thanks-box"><div class="check">✓</div><h1>Thanks for downloading.</h1><p>Your AI AGENT download has started. Welcome aboard.</p><button class="primary" onclick="returnHome()">Back to AI AGENT</button></div></div>
-<script>
-function downloadAgent() {
-    const link = document.createElement("a");
-    link.href = "https://github.com/RexAIStudios/AIAGENT/releases/download/Release3/aiagent.exe";
-    link.download = "aiagent.exe";
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#" class="logo" aria-label="AI AGENT home"><span class="logo-orb" aria-hidden="true"></span><span>AI AGENT</span></a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#desktop">Desktop Mode</a>
+      <a href="#preview">Preview</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="button button-primary" href="#start">Get AI AGENT <span aria-hidden="true">↗</span></a>
+  </nav>
 
+  <main>
+    <section class="hero container">
+      <div class="eyebrow reveal"><span class="live-dot" aria-hidden="true"></span> Your coding workspace</div>
+      <h1 class="reveal" style="animation-delay:.1s">Turn ideas into<br>working code.</h1>
+      <p class="hero-copy reveal" style="animation-delay:.18s">Meet AI AGENT, a free AI-powered desktop companion for coding, web browsing, desktop actions, voice interaction, and personalized assistance — all in one workflow.</p>
+      <div class="hero-actions reveal" style="animation-delay:.26s">
+        <a class="button button-primary" href="#start">Get started <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" href="#features">Explore features</a>
+      </div>
+      <p class="credit reveal" style="animation-delay:.3s">Built by <strong>Raiden</strong> · Part of the Rex AI / Rex Utils ecosystem</p>
+
+      <div class="preview reveal" id="preview" style="animation-delay:.36s">
+        <div class="preview-topbar" aria-hidden="true">
+          <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+          <span class="window-title">AI AGENT · workspace preview</span>
+        </div>
+        <div class="preview-frame">
+          <img src="Example3.png" alt="Preview of the AI AGENT application" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="preview-fallback" hidden>Application preview will appear here when Example3.png is available.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="features">
+      <div class="section-heading">
+        <span class="kicker">More than a coding assistant</span>
+        <h2>Your desktop.<br>Your workflow.</h2>
+        <p>AI AGENT brings project help, desktop actions, voice interaction, and personalization into one workspace. Available actions depend on your configuration and permissions.</p>
+      </div>
+      <div class="features">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⌘</div>
+          <h3>Project-aware coding</h3>
+          <p>Work with project folders, explore files, understand unfamiliar code, investigate errors, and make improvements with AI assistance.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">◎</div>
+          <h3>Web browsing</h3>
+          <p>Browse the web to look up documentation, explore websites, and gather information while working on a task.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">▣</div>
+          <h3>Desktop actions</h3>
+          <p>Open applications, launch Steam games, and press keyboard keys to help carry out supported desktop workflows.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">↗</div>
+          <h3>Account Manager</h3>
+          <p>Use Account Manager to assist with signing in to websites. Keep your account credentials private and review actions involving your accounts.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✦</div>
+          <h3>Memory &amp; personalization</h3>
+          <p>Memory can retain useful details, with custom personalization to help tailor future interactions to your preferences and workflow.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⚙</div>
+          <h3>Settings that fit you</h3>
+          <p>Configure available options to shape how AI AGENT behaves and how you prefer to work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="desktop">
+      <div class="section-heading">
+        <span class="kicker">SelfComputerUse · Desktop Mode</span>
+        <h2>AI assistance, right where you are.</h2>
+        <p>SelfComputerUse and Desktop Mode are designed to help connect instructions with on-screen work, so you can interact with your desktop without constantly switching contexts.</p>
+      </div>
+      <div class="features">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⌖</div>
+          <h3>Understand the app under your cursor</h3>
+          <p>In Desktop Mode, double-tap the middle mouse button to bring up an overview of the app you're hovering over.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">▤</div>
+          <h3>Quick chat by your cursor</h3>
+          <p>Triple-tap the middle mouse button to open a small chat window near your cursor for quick, contextual help.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⌁</div>
+          <h3>Voice interaction</h3>
+          <p>Use your microphone with a custom wake word, and dictate output when supported by your configuration for a more hands-free workflow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="about" style="padding-top:10px">
+      <div class="story">
+        <div>
+          <span class="kicker">The story behind it</span>
+          <h2>Built out of a real coding frustration.</h2>
+        </div>
+        <div class="story-copy">
+          <p>AI AGENT started with a familiar problem: working through PC projects, running into errors, and wanting help without hitting a chat limit at the wrong moment.</p>
+          <p>That frustration turned into a project of its own. AI AGENT is an independent effort to make an approachable coding companion available to more people.</p>
+          <p class="note">AI AGENT is independent and is not affiliated with, endorsed by, or sponsored by OpenAI, Codex, or any other third-party product unless explicitly stated.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta container" id="start">
+      <span class="kicker">Your next project starts here</span>
+      <h2>Ready to build something?</h2>
+      <p>Get AI AGENT and start exploring your next idea. Please review the project's license and release notes before installing.</p>
+      <button class="button button-primary" id="download-button" type="button">Download AI AGENT <span aria-hidden="true">→</span></button>
+      <p class="fine-print">Free to download · Check the project license for usage terms</p>
+    </section>
+  </main>
+
+  <footer>© 2026 AI AGENT · Raiden Avery · Built for people who build.</footer>
+</div>
+
+<section id="thanks" class="thanks container" aria-live="polite" aria-labelledby="thanks-title">
+  <div class="thanks-box">
+    <div class="check" aria-hidden="true">✓</div>
+    <h1 id="thanks-title">Thanks for checking it out.</h1>
+    <p>Your download should begin shortly. If it didn't start, use the button below to try again.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" id="retry-download" href="https://github.com/RexAIStudios/AIAGENT/releases/download/Release/aiagent.exe">Download again <span aria-hidden="true">→</span></a>
+      <button class="button button-secondary" id="home-button" type="button">Back to AI AGENT</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(() => {
+  const downloadUrl = "https://github.com/RexAIStudios/AIAGENT/releases/download/Release/aiagent.exe";
+  const site = document.getElementById("site");
+  const thanks = document.getElementById("thanks");
+  const downloadButton = document.getElementById("download-button");
+  const retryDownload = document.getElementById("retry-download");
+  const homeButton = document.getElementById("home-button");
+
+  retryDownload.href = downloadUrl;
+
+  function showThanks() {
+    site.classList.add("hidden");
+    thanks.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function returnHome() {
+    thanks.classList.remove("active");
+    site.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function downloadAgent() {
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = "aiagent.exe";
+    link.rel = "noopener";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
+    showThanks();
+  }
 
-    setTimeout(() => {
-        document.body.innerHTML = `
-            <div style="
-                min-height:100vh;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                text-align:center;
-                padding:30px;
-                color:#f5f7ff;
-                background:
-                    radial-gradient(circle at 50% 0%, rgba(91,83,255,.22), transparent 40%),
-                    #03040b;
-                font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
-            ">
-                <div>
-                    <div style="
-                        font-size:70px;
-                        margin-bottom:20px;
-                        text-shadow:0 0 35px rgba(120,140,255,.7);
-                    ">✓</div>
-
-                    <h1 style="
-                        font-size:clamp(38px,7vw,72px);
-                        letter-spacing:-.05em;
-                        margin-bottom:15px;
-                    ">
-                        Thanks for downloading.
-                    </h1>
-
-                    <p style="
-                        color:#9299b4;
-                        font-size:16px;
-                        margin-bottom:30px;
-                    ">
-                        AI AGENT is on its way to your computer.
-                    </p>
-
-                    <button onclick="location.reload()" style="
-                        border:0;
-                        padding:13px 22px;
-                        border-radius:13px;
-                        background:linear-gradient(135deg,#fff,#cbd5ff);
-                        color:#080914;
-                        font-size:13px;
-                        font-weight:750;
-                        cursor:pointer;
-                    ">
-                        Back to AI AGENT
-                    </button>
-                </div>
-            </div>
-        `;
-    }, 300);
-}
-function returnHome(){
-  document.getElementById('thanks').classList.remove('active');
-  document.getElementById('site').classList.remove('hidden');
-  window.scrollTo(0,0);
-}
+  downloadButton.addEventListener("click", downloadAgent);
+  retryDownload.addEventListener("click", () => {
+    window.setTimeout(showThanks, 150);
+  });
+  homeButton.addEventListener("click", returnHome);
+})();
 </script>
 </body>
 </html>
